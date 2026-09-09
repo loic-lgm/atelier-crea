@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff7f2;
+  color: #4a3138;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+}
+
+a {
+  color: #d92b72;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a8154f;
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+}
+
+@keyframes cq-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+.cq-nav-link {
+  font: inherit;
+  font-size: 17px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: none;
+  color: #4a3138;
+  display: inline-block;
+}
+
+.cq-nav-link:hover {
+  background: #ffe6da;
+  text-decoration: none;
+}
+
+.cq-nav-link.active {
+  background: #ffe6da;
+  color: #d92b72;
+  font-weight: 600;
+}
+
+.cq-btn-primary {
+  font: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  background: #d92b72;
+  color: #fff6f2;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #a8154f;
+  display: inline-block;
+}
+
+.cq-btn-primary:hover {
+  background: #c21f63;
+  text-decoration: none;
+  color: #fff6f2;
+}
+
+.cq-btn-secondary {
+  font: inherit;
+  font-weight: 600;
+  border: 2px solid #f2a17c;
+  border-radius: 999px;
+  background: #fffcfa;
+  color: #4a3138;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.cq-btn-secondary:hover {
+  background: #ffeadf;
+  text-decoration: none;
+  color: #4a3138;
+}
+
+.cq-card {
+  background: #fffcfa;
+  border: 1px solid #f5d9cb;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(150, 50, 80, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cq-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(150, 50, 80, 0.18);
+  border-color: #f2a17c;
+}
+
+.cq-figure {
+  margin: 0;
+  background: #fffcfa;
+  border: 1px solid #f5d9cb;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(150, 50, 80, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cq-figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(150, 50, 80, 0.18);
+  border-color: #f2a17c;
+}
+
+.cq-filter-btn {
+  font: inherit;
+  cursor: pointer;
+}
+
+.cq-input {
+  font: inherit;
+  font-size: 17px;
+  padding: 14px 16px;
+  border: 1px solid #f0c7b2;
+  border-radius: 14px;
+  background: #fffcfa;
+  color: #4a3138;
+  width: 100%;
+}
+
+.cq-input:focus {
+  outline: 2px solid #f2a17c;
+  outline-offset: 1px;
+}
+
+.cq-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a3138;
+  margin-bottom: 8px;
+}

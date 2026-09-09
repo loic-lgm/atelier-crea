@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Faustina:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FFF7F2; color: #4A3138; font-family: "Source Sans 3", system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  a { color: #D92B72; text-decoration: none; }
+  a:hover { color: #A8154F; text-decoration: underline; }
+  @keyframes cq-float { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-14px) rotate(1.5deg); } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#FFF7F2;background-image:radial-gradient(#F8DCD0 1px, transparent 1px);background-size:14px 14px;">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(255,247,242,0.96);border-bottom:1px solid #F5D9CB;backdrop-filter:blur(6px)">
+    <div style="max-width:1180px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span style="font-family:Faustina,Georgia,serif;font-size:30px;font-weight:600;color:#D92B72;letter-spacing:-0.01em">CréaQueen</span>
+        <span style="font-size:14px;color:#8A6068;letter-spacing:0.08em;text-transform:uppercase">Ateliers créatifs</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:8px">
+        <button onClick="{{ goHome }}" style="{{ navHomeStyle }}" style-hover="background:#FFE6DA">Accueil</button>
+        <button onClick="{{ goList }}" style="{{ navListStyle }}" style-hover="background:#FFE6DA">Nos ateliers</button>
+        <button style="font:inherit;font-size:17px;padding:10px 16px;border:none;background:none;color:#4A3138;border-radius:999px;cursor:pointer" style-hover="background:#FFE6DA">Contact</button>
+        <button style="font:inherit;font-size:17px;font-weight:600;padding:14px 26px;margin-left:12px;border:none;border-radius:999px;background:#D92B72;color:#FFF6F2;cursor:pointer;box-shadow:0 2px 0 #A8154F" style-hover="background:#C21F63">Réserver un atelier</button>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="max-width:1180px;margin:0 auto;padding:64px 40px 40px;display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center">
+      <div>
+        <p style="display:inline-block;margin:0 0 22px;padding:8px 16px;border-radius:999px;background:#FFE3D3;color:#C24F17;font-size:16px;font-weight:600">Pensé pour les femmes de 50 ans et plus</p>
+        <h1 style="font-family:Faustina,Georgia,serif;font-size:66px;line-height:1.1;font-weight:600;margin:0 0 24px;color:#3B2028;letter-spacing:-0.02em;text-wrap:pretty">Retrouvez le plaisir de faire<br />avec vos mains.</h1>
+        <p style="font-size:22px;line-height:1.65;margin:0 0 36px;color:#5E434A;max-width:32em;text-wrap:pretty">Des ateliers de cuisine, d'art floral, de poterie et de peinture, en petits groupes de huit personnes maximum. Tout le matériel est fourni, aucune expérience n'est nécessaire, et on prend le temps de faire connaissance autour d'un thé.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+          <button onClick="{{ goList }}" style="font:inherit;font-size:20px;font-weight:600;padding:20px 34px;border:none;border-radius:999px;background:#D92B72;color:#FFF6F2;cursor:pointer;box-shadow:0 3px 0 #A8154F" style-hover="background:#C21F63">Découvrir les ateliers</button>
+          <button style="font:inherit;font-size:20px;font-weight:600;padding:20px 34px;border:2px solid #F2A17C;border-radius:999px;background:#FFFCFA;color:#4A3138;cursor:pointer" style-hover="background:#FFEADF">Nous appeler : 04 78 25 61 09</button>
+        </div>
+      </div>
+      <div style="position:relative">
+        <div style="border-radius:220px 220px 24px 220px;overflow:hidden;border:1px solid #F0C7B2;background:repeating-linear-gradient(135deg,#FFE0CE 0 12px,#FDCFB9 12px 24px);height:520px;display:flex;align-items:center;justify-content:center;padding:28px">
+          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#B0653F;background:#FFFCFA;border:1px solid #F0C7B2;border-radius:8px;padding:8px 12px;text-align:center">photo : mains qui pétrissent la pâte, lumière chaude d'atelier</span>
+        </div>
+        <div style="position:absolute;bottom:-26px;left:-26px;background:#FFFCFA;border:1px solid #F5D9CB;border-radius:20px;padding:20px 26px;box-shadow:0 14px 30px rgba(150,50,80,0.16);animation:cq-float 6s ease-in-out infinite;will-change:transform">
+          <div style="font-family:Faustina,Georgia,serif;font-size:36px;font-weight:600;color:#D92B72;line-height:1">1 240</div>
+          <div style="font-size:16px;color:#7A575C;margin-top:4px">ateliers organisés<br />depuis 2016</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFEDE3;border-top:1px solid #F5D9CB;border-bottom:1px solid #F5D9CB;margin-top:56px">
+      <div style="max-width:1180px;margin:0 auto;padding:32px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+        <sc-for list="{{ reassurance }}" as="r" hint-placeholder-count="3">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="flex:none;width:14px;height:14px;margin-top:8px;border-radius:50%;background:#F2703A"></div>
+            <div>
+              <div style="font-size:19px;font-weight:600;color:#4A3138;margin-bottom:4px">{{ r.title }}</div>
+              <div style="font-size:17px;line-height:1.55;color:#6A4A50">{{ r.text }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:80px 40px 0">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:36px">
+        <div>
+          <h2 style="font-family:Faustina,Georgia,serif;font-size:44px;font-weight:600;margin:0 0 10px;color:#3B2028">Nos ateliers du moment</h2>
+          <p style="font-size:20px;color:#6A4A50;margin:0">Trois rendez-vous très demandés, à Lyon comme à Villeurbanne.</p>
+        </div>
+        <button onClick="{{ goList }}" style="font:inherit;font-size:19px;font-weight:600;padding:16px 26px;border:2px solid #F2A17C;border-radius:999px;background:#FFFCFA;color:#4A3138;cursor:pointer" style-hover="background:#FFEADF">Voir les 9 ateliers</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+        <sc-for list="{{ featured }}" as="w" hint-placeholder-count="3">
+          <article style="background:#FFFCFA;border:1px solid #F5D9CB;border-radius:28px;overflow:hidden;box-shadow:0 6px 20px rgba(150,50,80,0.08);display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease" style-hover="transform:translateY(-6px);box-shadow:0 16px 34px rgba(150,50,80,0.18);border-color:#F2A17C">
+            <div style="height:230px;background:repeating-linear-gradient(135deg,#FFE0CE 0 12px,#FDCFB9 12px 24px);display:flex;align-items:center;justify-content:center;padding:20px;border-bottom:1px solid #F5D9CB">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#B0653F;background:#FFFCFA;border:1px solid #F0C7B2;border-radius:8px;padding:7px 10px;text-align:center">{{ w.photo }}</span>
+            </div>
+            <div style="{{ w.barStyle }}"></div>
+            <div style="padding:26px 26px 28px;display:flex;flex-direction:column;flex:1">
+              <span style="{{ w.tagStyle }}">{{ w.tag }}</span>
+              <h3 style="font-family:Faustina,Georgia,serif;font-size:28px;font-weight:600;margin:0 0 10px;color:#3B2028">{{ w.title }}</h3>
+              <p style="font-size:18px;line-height:1.6;color:#6A4A50;margin:0 0 20px">{{ w.desc }}</p>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px dashed #F5CDB9;padding-top:18px">
+                <div style="font-size:17px;color:#7A575C">{{ w.duration }} · <strong style="color:#D92B72;font-size:19px">{{ w.price }}</strong></div>
+                <button style="font:inherit;font-size:17px;font-weight:600;padding:12px 20px;border:none;border-radius:999px;background:#D92B72;color:#FFF6F2;cursor:pointer;box-shadow:0 2px 0 #A8154F" style-hover="background:#C21F63">Réserver</button>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:80px 40px 0">
+      <div style="background:#FFFCFA;border:1px solid #F5D9CB;border-radius:36px;padding:52px 56px">
+        <h2 style="font-family:Faustina,Georgia,serif;font-size:40px;font-weight:600;margin:0 0 34px;color:#3B2028">Ce qu'en disent nos participantes</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+          <sc-for list="{{ reviews }}" as="t" hint-placeholder-count="3">
+            <figure style="margin:0;display:flex;flex-direction:column;gap:18px">
+              <div style="color:#F5A623;font-size:20px;letter-spacing:3px">★★★★★</div>
+              <blockquote style="margin:0;font-family:Faustina,Georgia,serif;font-size:21px;line-height:1.6;color:#54393F">{{ t.quote }}</blockquote>
+              <figcaption style="display:flex;align-items:center;gap:12px;font-size:17px;color:#7A575C">
+                <span style="width:44px;height:44px;border-radius:50%;background:#FFE0CE;border:1px solid #F0C7B2;display:flex;align-items:center;justify-content:center;font-family:Faustina,Georgia,serif;font-size:19px;color:#C24F17">{{ t.initials }}</span>
+                <span>{{ t.name }}</span>
+              </figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:80px 40px">
+      <div style="margin-bottom:36px">
+        <h2 style="font-family:Faustina,Georgia,serif;font-size:44px;font-weight:600;margin:0;color:#3B2028">Les créations du moment</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <sc-for list="{{ creations }}" as="c" hint-placeholder-count="4">
+          <figure style="margin:0;background:#FFFCFA;border:1px solid #F5D9CB;border-radius:24px;overflow:hidden;box-shadow:0 6px 20px rgba(150,50,80,0.08);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease" style-hover="transform:translateY(-6px);box-shadow:0 16px 34px rgba(150,50,80,0.18);border-color:#F2A17C">
+            <div style="height:200px;background:repeating-linear-gradient(135deg,#FFE0CE 0 12px,#FDCFB9 12px 24px);display:flex;align-items:center;justify-content:center;padding:16px;border-bottom:1px solid #F5D9CB">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#B0653F;background:#FFFCFA;border:1px solid #F0C7B2;border-radius:8px;padding:7px 10px;text-align:center">{{ c.photo }}</span>
+            </div>
+            <figcaption style="padding:18px 20px 20px;display:flex;flex-direction:column;align-items:flex-start">
+              <span style="{{ c.tagStyle }}">{{ c.cat }}</span>
+              <div style="font-family:Faustina,Georgia,serif;font-size:21px;font-weight:600;color:#3B2028;margin-bottom:4px">{{ c.title }}</div>
+              <div style="font-size:17px;color:#7A575C;line-height:1.5">{{ c.author }}</div>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#F2703A;color:#FFF7F2">
+      <div style="max-width:1180px;margin:0 auto;padding:64px 40px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap">
+        <div style="max-width:36em">
+          <h2 style="font-family:Faustina,Georgia,serif;font-size:42px;font-weight:600;margin:0 0 14px;color:#FFFCFA">Une question avant de vous inscrire ?</h2>
+          <p style="font-size:20px;line-height:1.6;margin:0;color:#FFEDE1">Appelez-nous du mardi au samedi, de 9h à 18h. Nous répondons toujours à quelqu'un de vive voix, jamais par répondeur.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <button style="font:inherit;font-size:20px;font-weight:600;padding:20px 34px;border:none;border-radius:999px;background:#FFFCFA;color:#C24F17;cursor:pointer;box-shadow:0 3px 0 #C24F17" style-hover="background:#FFEADF">04 78 25 61 09</button>
+          <button style="font:inherit;font-size:19px;font-weight:600;padding:18px 34px;border:2px solid #FBD3B8;border-radius:999px;background:transparent;color:#FFFCFA;cursor:pointer" style-hover="background:#E05F22">Écrire un message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="max-width:1180px;margin:0 auto;padding:60px 40px 12px">
+      <p style="font-size:17px;color:#8A6068;margin:0 0 16px"><a href="#" onClick="{{ goHome }}">Accueil</a> &nbsp;›&nbsp; Nos ateliers</p>
+      <h1 style="font-family:Faustina,Georgia,serif;font-size:56px;line-height:1.12;font-weight:600;margin:0 0 18px;color:#3B2028;letter-spacing:-0.02em">Tous nos ateliers</h1>
+      <p style="font-size:21px;line-height:1.65;color:#5E434A;margin:0;max-width:40em">Neuf ateliers, huit participantes maximum, matériel compris. Choisissez celui qui vous fait envie : vous verrez les dates disponibles à l'étape suivante.</p>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:28px 40px 8px">
+      <div style="background:#FFFCFA;border:1px solid #F5D9CB;border-radius:24px;padding:22px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <span style="font-size:18px;font-weight:600;color:#6A4A50;margin-right:6px">Filtrer :</span>
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+          <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:34px 40px 80px">
+      <p style="font-size:18px;color:#7A575C;margin:0 0 24px">{{ countLabel }}</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:34px">
+        <sc-for list="{{ visible }}" as="w" hint-placeholder-count="9">
+          <article style="background:#FFFCFA;border:1px solid #F5D9CB;border-radius:28px;overflow:hidden;box-shadow:0 6px 20px rgba(150,50,80,0.08);display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease" style-hover="transform:translateY(-6px);box-shadow:0 16px 34px rgba(150,50,80,0.18);border-color:#F2A17C">
+            <div style="height:210px;background:repeating-linear-gradient(135deg,#FFE0CE 0 12px,#FDCFB9 12px 24px);display:flex;align-items:center;justify-content:center;padding:18px;border-bottom:1px solid #F5D9CB">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#B0653F;background:#FFFCFA;border:1px solid #F0C7B2;border-radius:8px;padding:7px 10px;text-align:center">{{ w.photo }}</span>
+            </div>
+            <div style="{{ w.barStyle }}"></div>
+            <div style="padding:24px 26px 26px;display:flex;flex-direction:column;flex:1">
+              <span style="{{ w.tagStyle }}">{{ w.tag }}</span>
+              <h3 style="font-family:Faustina,Georgia,serif;font-size:26px;font-weight:600;margin:0 0 10px;color:#3B2028">{{ w.title }}</h3>
+              <p style="font-size:18px;line-height:1.6;color:#6A4A50;margin:0 0 18px">{{ w.desc }}</p>
+              <dl style="margin:0 0 20px;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:17px">
+                <dt style="color:#9A727A">Durée</dt><dd style="margin:0;color:#54393F">{{ w.duration }}</dd>
+                <dt style="color:#9A727A">Tarif</dt><dd style="margin:0;color:#54393F">{{ w.price }} par personne</dd>
+                <dt style="color:#9A727A">Lieu</dt><dd style="margin:0;color:#54393F">{{ w.place }}</dd>
+              </dl>
+              <div style="margin-top:auto;border-top:1px dashed #F5CDB9;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <span style="font-size:16px;color:#7A575C">{{ w.next }}</span>
+                <button style="font:inherit;font-size:17px;font-weight:600;padding:12px 22px;border:none;border-radius:999px;background:#D92B72;color:#FFF6F2;cursor:pointer;box-shadow:0 2px 0 #A8154F" style-hover="background:#C21F63">Réserver</button>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#FFEDE3;border-top:1px solid #F5D9CB">
+      <div style="max-width:1180px;margin:0 auto;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+        <div style="max-width:34em">
+          <h2 style="font-family:Faustina,Georgia,serif;font-size:36px;font-weight:600;margin:0 0 12px;color:#3B2028">Vous hésitez entre deux ateliers ?</h2>
+          <p style="font-size:19px;line-height:1.6;color:#6A4A50;margin:0">Dites-nous ce qui vous attire, nous vous conseillons par téléphone en cinq minutes.</p>
+        </div>
+        <button style="font:inherit;font-size:20px;font-weight:600;padding:20px 34px;border:none;border-radius:999px;background:#D92B72;color:#FFF6F2;cursor:pointer;box-shadow:0 3px 0 #A8154F" style-hover="background:#C21F63">04 78 25 61 09</button>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="background:#3B2028;color:#F2DDD6">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px">
+      <div>
+        <div style="font-family:Faustina,Georgia,serif;font-size:28px;font-weight:600;color:#FFE4E9;margin-bottom:12px">CréaQueen</div>
+        <p style="font-size:18px;line-height:1.6;margin:0;color:#D7BEC1;max-width:26em">Ateliers manuels et créatifs en petits groupes, à Lyon et Villeurbanne, depuis 2016.</p>
+      </div>
+      <div>
+        <div style="font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#B79AA0;margin-bottom:14px">Nous trouver</div>
+        <p style="font-size:18px;line-height:1.7;margin:0;color:#F2DDD6">14 rue des Capucins<br />69001 Lyon<br />04 78 25 61 09</p>
+      </div>
+      <div>
+        <div style="font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#B79AA0;margin-bottom:14px">Horaires</div>
+        <p style="font-size:18px;line-height:1.7;margin:0;color:#F2DDD6">Mardi au samedi<br />9h – 18h<br />bonjour@creaqueen.fr</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const WORKSHOPS = [
+  { id: 1, cat: "Cuisine", tag: "Cuisine", title: "Pâtes fraîches à la main", desc: "On pétrit, on étale, on découpe des tagliatelles, et on déjeune ensemble ce que l'on a préparé.", duration: "3 h", price: "58 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : jeudi 17 sept.", photo: "photo : pâtes fraîches sur plan de travail fariné" },
+  { id: 2, cat: "Art floral", tag: "Art floral", title: "Bouquet de saison", desc: "Composer un bouquet généreux avec les fleurs du marché, à rapporter chez vous le soir même.", duration: "2 h", price: "45 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : samedi 12 sept.", photo: "photo : mains qui nouent un bouquet, feuillage" },
+  { id: 3, cat: "Poterie", tag: "Poterie", title: "Premier tour de potier", desc: "Sentir la terre monter entre les mains et repartir avec deux pièces, cuites et émaillées par nos soins.", duration: "3 h 30", price: "72 €", place: "Atelier Gratte-Ciel, Villeurbanne", next: "Prochaine date : mardi 15 sept.", photo: "photo : mains sur un tour de potier, argile humide" },
+  { id: 4, cat: "Peinture", tag: "Peinture", title: "Aquarelle botanique", desc: "Apprendre à observer une feuille, un pétale, et à poser la couleur en transparence. Papier et pinceaux fournis.", duration: "2 h 30", price: "48 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : mercredi 16 sept.", photo: "photo : palette d'aquarelle et pinceaux sur bois clair" },
+  { id: 5, cat: "Cuisine", tag: "Cuisine", title: "Pains et brioches au levain", desc: "Comprendre le levain, façonner sa miche, et rentrer avec deux pains encore tièdes.", duration: "4 h", price: "65 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : samedi 19 sept.", photo: "photo : pains dorés sortant du four" },
+  { id: 6, cat: "Poterie", tag: "Poterie", title: "Modelage à la plaque", desc: "Sans tour, à la main : un plat, une coupelle, un vase. Idéal pour une première fois.", duration: "3 h", price: "62 €", place: "Atelier Gratte-Ciel, Villeurbanne", next: "Prochaine date : vendredi 18 sept.", photo: "photo : plaque d'argile et outils en bois" },
+  { id: 7, cat: "Art floral", tag: "Art floral", title: "Couronne de fleurs séchées", desc: "Une couronne durable en fleurs séchées et graminées, à accrocher chez vous toute l'année.", duration: "2 h", price: "42 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : jeudi 24 sept.", photo: "photo : couronne de fleurs séchées sur mur crème" },
+  { id: 8, cat: "Peinture", tag: "Peinture", title: "Peinture à l'huile, portrait", desc: "Trois séances pour aborder le portrait sans crainte, avec une petite toile à chaque fois.", duration: "3 × 2 h", price: "135 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine session : à partir du 22 sept.", photo: "photo : chevalet, tubes de peinture à l'huile" },
+  { id: 9, cat: "Cuisine", tag: "Cuisine", title: "Confitures et conserves", desc: "Stériliser, doser le sucre, réussir la prise : on repart avec quatre pots étiquetés.", duration: "3 h", price: "52 €", place: "Atelier Capucins, Lyon 1er", next: "Prochaine date : mardi 29 sept.", photo: "photo : pots de confiture alignés, étiquettes kraft" }
+];
+
+const CATS = ["Tous les ateliers", "Cuisine", "Art floral", "Poterie", "Peinture"];
+
+const CAT_COLORS = {
+  "Cuisine":    { ink: "#C24F17", bg: "#FFE5D2", line: "#F09256" },
+  "Art floral": { ink: "#C41E64", bg: "#FFE0EC", line: "#F286AF" },
+  "Poterie":    { ink: "#A93BA0", bg: "#FBE0F5", line: "#DC8FD3" },
+  "Peinture":   { ink: "#C0392B", bg: "#FFE1DC", line: "#EE8C7E" }
+};
+
+const tagStyle = (cat) => {
+  const c = CAT_COLORS[cat] || CAT_COLORS["Poterie"];
+  return "align-self:flex-start;font-size:15px;font-weight:600;border-radius:999px;padding:6px 14px;margin-bottom:14px;color:" + c.ink + ";background:" + c.bg + ";border:1px solid " + c.line + ";";
+};
+
+const decorate = (w) => Object.assign({}, w, { tagStyle: tagStyle(w.cat), barStyle: "height:6px;background:" + (CAT_COLORS[w.cat] || CAT_COLORS["Poterie"]).line + ";" });
+
+class Component extends DCLogic {
+  state = { page: "home", cat: "Tous les ateliers" };
+
+  renderVals() {
+    const { page, cat } = this.state;
+    const navBase = "font:inherit;font-size:17px;padding:10px 16px;border:none;border-radius:999px;cursor:pointer;background:none;color:#4A3138;";
+    const navOn = "font:inherit;font-size:17px;padding:10px 16px;border:none;border-radius:999px;cursor:pointer;background:#FFE6DA;color:#D92B72;font-weight:600;";
+    const visible = cat === "Tous les ateliers" ? WORKSHOPS : WORKSHOPS.filter(w => w.cat === cat);
+    const filterStyle = (c) => {
+      if (c === "Tous les ateliers") {
+        return c === cat
+          ? "font:inherit;font-size:18px;font-weight:600;padding:12px 22px;border:2px solid #3B2028;border-radius:999px;background:#3B2028;color:#FFF7F2;cursor:pointer;"
+          : "font:inherit;font-size:18px;font-weight:500;padding:12px 22px;border:2px solid #F0C7B2;border-radius:999px;background:#FFFCFA;color:#54393F;cursor:pointer;";
+      }
+      const col = CAT_COLORS[c];
+      return c === cat
+        ? "font:inherit;font-size:18px;font-weight:600;padding:12px 22px;border:2px solid " + col.ink + ";border-radius:999px;background:" + col.ink + ";color:#FFFCFA;cursor:pointer;"
+        : "font:inherit;font-size:18px;font-weight:500;padding:12px 22px;border:2px solid " + col.line + ";border-radius:999px;background:" + col.bg + ";color:" + col.ink + ";cursor:pointer;";
+    };
+
+    return {
+      isHome: page === "home",
+      isList: page === "list",
+      goHome: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ page: "home" }); window.scrollTo(0, 0); },
+      goList: () => { this.setState({ page: "list" }); window.scrollTo(0, 0); },
+      navHomeStyle: page === "home" ? navOn : navBase,
+      navListStyle: page === "list" ? navOn : navBase,
+      featured: WORKSHOPS.slice(0, 3).map(decorate),
+      visible: visible.map(decorate),
+      countLabel: visible.length + (visible.length > 1 ? " ateliers disponibles" : " atelier disponible"),
+      filters: CATS.map(c => ({
+        label: c,
+        onClick: () => this.setState({ cat: c }),
+        style: filterStyle(c)
+      })),
+      reassurance: [
+        { title: "8 participantes maximum", text: "Assez petit pour que l'on s'occupe vraiment de vous." },
+        { title: "Tout le matériel fourni", text: "Venez les mains vides, tablier et ingrédients compris." },
+        { title: "Aucune expérience requise", text: "La plupart de nos participantes débutent avec nous." }
+      ],
+      creations: [
+        { cat: "Poterie", title: "Bol tourné, émail sable", author: "Par Danielle", workshop: "Premier tour de potier", photo: "photo : bol en grès posé sur une table en bois" },
+        { cat: "Art floral", title: "Bouquet d'automne", author: "Par Nicole", workshop: "Bouquet de saison", photo: "photo : bouquet de dahlias et graminées" },
+        { cat: "Peinture", title: "Étude de figuier", author: "Par Sylvie", workshop: "Aquarelle botanique", photo: "photo : aquarelle d'une feuille de figuier" },
+        { cat: "Cuisine", title: "Quatre pots de mirabelles", author: "Par Josiane", workshop: "Confitures et conserves", photo: "photo : pots de confiture étiquetés à la main" }
+      ].map(c => Object.assign({}, c, { tagStyle: tagStyle(c.cat) })),
+      reviews: [
+        { quote: "Je suis venue seule, un peu intimidée. Au bout d'une heure je riais avec mes voisines de table.", name: "Martine, 63 ans", initials: "M" },
+        { quote: "On m'explique lentement, on ne me fait jamais sentir que je suis lente. C'est rare.", name: "Françoise, 58 ans", initials: "F" },
+        { quote: "Mes deux bols sont sur la table du salon. Mes petits-enfants n'y croyaient pas.", name: "Chantal, 71 ans", initials: "C" }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
