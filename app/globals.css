@@ -55,6 +55,10 @@ button {
   text-decoration: none;
 }
 
+.cq-logo-link:hover {
+  text-decoration: none;
+}
+
 .cq-nav-link.active {
   background: #ffe6da;
   color: #d92b72;

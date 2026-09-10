@@ -4,7 +4,7 @@ import WorkshopFilters from "@/components/WorkshopFilters";
 export const metadata: Metadata = {
   title: "Nos ateliers — CréaQueen",
   description:
-    "Neuf ateliers, huit participantes maximum, matériel compris. Cuisine, art floral, poterie et peinture à Lyon et Villeurbanne.",
+    "Neuf ateliers, cinq participants maximum, matériel compris. Cuisine, art floral, mosaïque et peinture à domicile.",
 };
 
 const heading: React.CSSProperties = {
@@ -67,7 +67,7 @@ export default function AteliersPage() {
             </h2>
             <p style={{ fontSize: 19, lineHeight: 1.6, color: "#6A4A50", margin: 0 }}>
               Dites-nous ce qui vous attire, nous vous conseillons par
-              téléphone en cinq minutes.
+              téléphone ou mail en cinq minutes.
             </p>
           </div>
           <a

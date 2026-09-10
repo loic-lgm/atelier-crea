@@ -30,10 +30,11 @@ export default function Header() {
       >
         <Link
           href="/"
+          className="cq-logo-link"
           style={{
             display: "flex",
-            alignItems: "baseline",
-            gap: 10,
+            flexDirection: "column",
+            gap: 2,
             color: "inherit",
           }}
         >
@@ -44,19 +45,20 @@ export default function Header() {
               fontWeight: 600,
               color: "#D92B72",
               letterSpacing: "-0.01em",
+              lineHeight: 1.1,
             }}
           >
             CréaQueen
           </span>
           <span
             style={{
-              fontSize: 14,
+              fontSize: 13,
               color: "#8A6068",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}
           >
-            Ateliers créatifs
+            Ateliers créatifs à domicile
           </span>
         </Link>
         <nav style={{ display: "flex", alignItems: "center", gap: 8 }}>

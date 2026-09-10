@@ -19,9 +19,9 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "CréaQueen — Ateliers créatifs à Lyon et Villeurbanne",
+  title: "CréaQueen — Ateliers créatifs à domicile",
   description:
-    "Ateliers de cuisine, art floral, poterie et peinture en petits groupes de huit personnes maximum. Pensé pour les femmes de 50 ans et plus.",
+    "Ateliers de cuisine, création de bijoux, peintures et art floral à domicile. Pensé pour les gens seuls et isolés.",
 };
 
 export default function RootLayout({

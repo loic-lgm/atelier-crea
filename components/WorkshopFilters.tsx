@@ -1,13 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
-import { WORKSHOPS, CATS, CAT_COLORS, tagStyle, barStyle, Category } from "@/lib/data";
-
-const heading: React.CSSProperties = {
-  fontFamily: "var(--font-faustina), Georgia, serif",
-};
+import WorkshopCard from "@/components/WorkshopCard";
+import { WORKSHOPS, CATS, CAT_COLORS, Category } from "@/lib/data";
 
 type CatFilter = Category | "Tous les ateliers";
 
@@ -16,9 +11,9 @@ function filterStyle(c: CatFilter, active: boolean): React.CSSProperties {
     return active
       ? {
           font: "inherit",
-          fontSize: 18,
+          fontSize: 15,
           fontWeight: 600,
-          padding: "12px 22px",
+          padding: "9px 16px",
           border: "2px solid #3B2028",
           borderRadius: 999,
           background: "#3B2028",
@@ -27,9 +22,9 @@ function filterStyle(c: CatFilter, active: boolean): React.CSSProperties {
         }
       : {
           font: "inherit",
-          fontSize: 18,
+          fontSize: 15,
           fontWeight: 500,
-          padding: "12px 22px",
+          padding: "9px 16px",
           border: "2px solid #F0C7B2",
           borderRadius: 999,
           background: "#FFFCFA",
@@ -41,9 +36,9 @@ function filterStyle(c: CatFilter, active: boolean): React.CSSProperties {
   return active
     ? {
         font: "inherit",
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 600,
-        padding: "12px 22px",
+        padding: "9px 16px",
         border: `2px solid ${col.ink}`,
         borderRadius: 999,
         background: col.ink,
@@ -52,9 +47,9 @@ function filterStyle(c: CatFilter, active: boolean): React.CSSProperties {
       }
     : {
         font: "inherit",
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 500,
-        padding: "12px 22px",
+        padding: "9px 16px",
         border: `2px solid ${col.line}`,
         borderRadius: 999,
         background: col.bg,
@@ -79,14 +74,14 @@ export default function WorkshopFilters() {
             background: "#FFFCFA",
             border: "1px solid #F5D9CB",
             borderRadius: 24,
-            padding: "22px 26px",
+            padding: "20px 24px",
             display: "flex",
             alignItems: "center",
-            gap: 14,
+            gap: 10,
             flexWrap: "wrap",
           }}
         >
-          <span style={{ fontSize: 18, fontWeight: 600, color: "#6A4A50", marginRight: 6 }}>
+          <span style={{ fontSize: 16, fontWeight: 600, color: "#6A4A50", marginRight: 4 }}>
             Filtrer :
           </span>
           {CATS.map((c) => (
@@ -106,70 +101,7 @@ export default function WorkshopFilters() {
         <p style={{ fontSize: 18, color: "#7A575C", margin: "0 0 24px" }}>{countLabel}</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 34 }}>
           {visible.map((w) => (
-            <article key={w.id} className="cq-card">
-              <PhotoPlaceholder caption={w.photo} height={210} />
-              <div style={barStyle(w.cat)} />
-              <div
-                style={{
-                  padding: "24px 26px 26px",
-                  display: "flex",
-                  flexDirection: "column",
-                  flex: 1,
-                }}
-              >
-                <span style={tagStyle(w.cat)}>{w.tag}</span>
-                <h3
-                  style={{
-                    ...heading,
-                    fontSize: 26,
-                    fontWeight: 600,
-                    margin: "0 0 10px",
-                    color: "#3B2028",
-                  }}
-                >
-                  {w.title}
-                </h3>
-                <p style={{ fontSize: 18, lineHeight: 1.6, color: "#6A4A50", margin: "0 0 18px" }}>
-                  {w.desc}
-                </p>
-                <dl
-                  style={{
-                    margin: "0 0 20px",
-                    display: "grid",
-                    gridTemplateColumns: "auto 1fr",
-                    gap: "8px 14px",
-                    fontSize: 17,
-                  }}
-                >
-                  <dt style={{ color: "#9A727A" }}>Durée</dt>
-                  <dd style={{ margin: 0, color: "#54393F" }}>{w.duration}</dd>
-                  <dt style={{ color: "#9A727A" }}>Tarif</dt>
-                  <dd style={{ margin: 0, color: "#54393F" }}>{w.price} par personne</dd>
-                  <dt style={{ color: "#9A727A" }}>Lieu</dt>
-                  <dd style={{ margin: 0, color: "#54393F" }}>{w.place}</dd>
-                </dl>
-                <div
-                  style={{
-                    marginTop: "auto",
-                    borderTop: "1px dashed #F5CDB9",
-                    paddingTop: 18,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: 12,
-                  }}
-                >
-                  <span style={{ fontSize: 16, color: "#7A575C" }}>{w.next}</span>
-                  <Link
-                    href="/contact"
-                    className="cq-btn-primary"
-                    style={{ fontSize: 17, padding: "12px 22px" }}
-                  >
-                    Réserver
-                  </Link>
-                </div>
-              </div>
-            </article>
+            <WorkshopCard key={w.id} workshop={w} />
           ))}
         </div>
       </section>
